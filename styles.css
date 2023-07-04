@@ -1,4 +1,4 @@
-/* Default Styles */
+/* Default Styles & Page Structure */
 
 html, 
 body {
@@ -8,5 +8,31 @@ body {
     flex-flow: column wrap;
 }
 
+main {
+    display: flex;
+    flex-flow: row wrap;
+}
+
 /* -------------------------------------------------------------------------- */
+
+/* Sketch Board */
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(32, 1fr);
+    grid-template-rows: repeat(32, 1fr);
+}
+
+/* -------------------------------------------------------------------------- */
+
+/* Sketch Menu Options */
+
+#menu {
+    display: inherit;
+    flex-direction: column;
+}
+
+/* -------------------------------------------------------------------------- */
+
+/* Footer & Acknowledgements */
 
