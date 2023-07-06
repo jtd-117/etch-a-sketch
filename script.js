@@ -60,6 +60,7 @@ function generateBoard(board, pixelSlider) {
     deleteBoardCells(board);
     
     // STEP 3: Add cells to the board (i.e. dimensions x dimensions)
+    addBoardCells(board, dimensions);
 }
 /* -------------------------------------------------------------------------- */
 
