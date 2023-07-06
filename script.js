@@ -5,8 +5,8 @@
 * --------------------------------------------------------------------------- */
 
 /**
- * @description (AUXILIARY) DELETES cells from the 'board' div.
- * @param {*}   board The board div & it's ID name
+ * @description     (AUXILIARY) DELETES cells from the 'board' div.
+ * @param {Element} board The board div & it's ID name
  */
 function deleteBoardCells(board) {
     
@@ -24,7 +24,7 @@ function deleteBoardCells(board) {
 /**
  * @description     (AUXILIARY) ADDS 'dimensions' x 'dimensions' cells to 
  *                  'board' div.
- * @param {*}       board       The board div & it's ID name
+ * @param {Element} board       The board div & it's ID name
  * @param {number}  dimensions  The number of cell rows and columns 'board' 
  *                  will contain
  */
@@ -46,10 +46,10 @@ function addBoardCells(board, dimensions) {
 }
 /* -------------------------------------------------------------------------- */
 /**
- * @description Adds cells (i.e. pixels) to the 'board' div according to the 
- *              dimensions specified on the 'pixel-slider' input.
- * @param {*}   board       The board div & it's ID name
- * @param {*}   pixelSlider The pixel slider div & it's ID name
+ * @description     Adds cells (i.e. pixels) to the 'board' div according to 
+ *                  the dimensions specified on the 'pixel-slider' input.
+ * @param {Element} board       The board div & it's ID name
+ * @param {Element} pixelSlider The pixel slider div & it's ID name
  */
 function generateBoard(board, pixelSlider) {
 
