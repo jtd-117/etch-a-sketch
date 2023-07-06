@@ -3,32 +3,11 @@
  * @author          Jude Thaddeau Data
  * @link            https://github.com/jtd-117
 * --------------------------------------------------------------------------- */
-
-/**
- * @description     (AUXILIARY) DELETES cells from the 'board' div.
- * @param {Element} board The board div & it's ID name
- */
-function deleteBoardCells(board) {
-    
-    // STEP 1: Only delete child elements if they exist
-    while (board.childElementCount > 0) {
-        
-        // STEP 2: Select the first child
-        let cell = board.firstElementChild;
-
-        // STEP 3: Delete the first child from the DOM
-        board.removeChild(cell)
-    }
-}
-/* -------------------------------------------------------------------------- */
 /**
  * @description     (AUXILIARY) ADDS 'dimensions' x 'dimensions' cells to 
  *                  'board' div.
- * @param {Element} board       The board div & it's ID name
- * @param {number}  dimensions  The number of cell rows and columns 'board' 
- *                  will contain
  */
-function addBoardCells(board, dimensions) {
+function addBoardCells() {
 
     // STEP 1: Keep adding cells according to dimensions
     let cell = null;
@@ -48,16 +27,14 @@ function addBoardCells(board, dimensions) {
 /**
  * @description     Adds cells (i.e. pixels) to the 'board' div according to 
  *                  the dimensions specified on the 'pixel-slider' input.
- * @param {Element} board       The board div & it's ID name
- * @param {Element} pixelSlider The pixel slider div & it's ID name
  */
-function generateBoard(board, pixelSlider) {
+function generateBoard() {
 
     // STEP 1: Get the dimensions specified on 'pixelSlider'
     const dimensions = pixelSlider.value;
 
     // STEP 2: Delete all child elements inside 'board'
-    deleteBoardCells(board);
+    board.innerHTML = "";
     
     // STEP 3: Add cells to the board (i.e. dimensions x dimensions)
     addBoardCells(board, dimensions);
