@@ -6,8 +6,9 @@
 /**
  * @description     (AUXILIARY) ADDS 'dimensions' x 'dimensions' cells to 
  *                  'board' div.
+ * @param {number}  dimensions 
  */
-function addBoardCells() {
+function addBoardCells(dimensions) {
 
     // STEP 1: Keep adding cells according to dimensions
     let cell = null;
@@ -26,7 +27,8 @@ function addBoardCells() {
 /* -------------------------------------------------------------------------- */
 /**
  * @description     Adds cells (i.e. pixels) to the 'board' div according to 
- *                  the dimensions specified on the 'pixel-slider' input.
+ *                  the dimensions specified on the 'pixel-slider' input & 
+ *                  displays the board dimensions.
  */
 function generateBoard() {
 
@@ -37,12 +39,17 @@ function generateBoard() {
     board.innerHTML = "";
     
     // STEP 3: Add cells to the board (i.e. dimensions x dimensions)
-    addBoardCells(board, dimensions);
+    addBoardCells(dimensions);
+
+    // STEP 4: Display the board dimensions
+    size.textContent = `${dimensions} x ${dimensions}`;
 }
 /* -------------------------------------------------------------------------- */
 
 // STEP 1: Initialise queried document tags
 const board = document.getElementById("board");
 const pixelSlider = document.getElementById("pixel-slider");
+const size = document.getElementById("size");
 
-// STEP 2: Add event listeners to the document tags
+// STEP 2: Handle board resetting & generation
+pixelSlider.addEventListener("input", generateBoard);
