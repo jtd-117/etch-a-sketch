@@ -10,17 +10,21 @@
  */
 function addBoardCells(dimensions) {
 
-    // STEP 1: Keep adding cells according to dimensions
+    // STEP 1: Adjust the grid's rows & columns
+    board.style.gridTemplateRows = `repeat(${dimensions}, 1fr)`;
+    board.style.gridTemplateColumns = `repeat(${dimensions}, 1fr)`;
+
+    // STEP 2: Keep adding cells according to dimensions
     let cell = null;
     for (let i = 0; i < dimensions * dimensions; i++) {
 
-        // STEP 2: Initialise the new cell
+        // STEP 3: Initialise the new cell
         cell = document.createElement('div')
 
-        // STEP 3: Add 'cell' class
+        // STEP 4: Add 'cell' class
         cell.classList.add("cell");
 
-        // STEP 4: Add cell to 'board' DOM
+        // STEP 5: Add cell to 'board' DOM
         board.appendChild(cell);
     }
 }
