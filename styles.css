@@ -18,9 +18,10 @@ main {
 /* Sketch Board */
 
 #board {
+    inline-size: 500px;
+    block-size: 500px;
     display: grid;
-    grid-template-columns: repeat(32, 1fr);
-    grid-template-rows: repeat(32, 1fr);
+    border: 1px solid black;
 }
 
 /* -------------------------------------------------------------------------- */
