@@ -1,4 +1,4 @@
-# PIXEL SKETCH
+# PIXEL SKETCHER
 
 ## Contents:
 1. [About](#about)
@@ -6,7 +6,7 @@
 3. [Note](#note)
 
 ## About:
-'Pixel Sketch' provides a blank canvas of pixels for users to draw on. Users can select a color to sketch with a single color or a random selection of colors (i.e. Rainbow), adjust the number of pixels on the canvas, toggle between light and dark backgrounds, & use the 'Eraser' to clear sections of their work.
+'Pixel Sketcher' provides a blank canvas of pixels for users to draw on. Users can select a color to sketch with a single color or a random selection of colors (i.e. Rainbow), adjust the number of pixels on the canvas, toggle between light and dark backgrounds, & use the 'Eraser' to clear sections of their work.
 
 ## Features:
 - Color Selection
