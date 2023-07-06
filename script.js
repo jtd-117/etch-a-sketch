@@ -52,4 +52,5 @@ const pixelSlider = document.getElementById("pixel-slider");
 const size = document.getElementById("size");
 
 // STEP 2: Handle board resetting & generation
+window.onload = generateBoard;
 pixelSlider.addEventListener("input", generateBoard);
