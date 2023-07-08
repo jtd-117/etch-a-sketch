@@ -49,12 +49,31 @@ function generateBoard() {
     size.textContent = `${dimensions} x ${dimensions}`;
 }
 /* -------------------------------------------------------------------------- */
+/**
+ * @description     Adjusts the 'color' variable to match the selected input
+ * @param {Event}   e The selected 'color' input
+ */
+function colorSelect(e) {
+    color = e.target.value;
+}
+/* -------------------------------------------------------------------------- */
 
 // STEP 1: Initialise queried document tags
 const board = document.getElementById("board");
 const pixelSlider = document.getElementById("pixel-slider");
 const size = document.getElementById("size");
+const colorPicker = document.getElementById("color-picker");
 
-// STEP 2: Handle board resetting & generation
-window.onload = generateBoard;
+// STEP 2: Initialise variables
+let mode = null;
+let color = colorPicker.value;
+
+// STEP 3: Preload & execute necessary functions
+window.onload = function() {
+    generateBoard();
+}
+// STEP 4: Handle board resetting & generation
 pixelSlider.addEventListener("input", generateBoard);
+
+// STEP 5: Handle pencil functionality
+colorPicker.addEventListener("input", colorSelect);
