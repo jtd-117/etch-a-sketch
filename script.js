@@ -24,8 +24,14 @@ function addBoardCells(dimensions) {
         // STEP 4: Add 'cell' class
         cell.classList.add("cell");
 
-        // STEP 5: Add 'click' event listener to the cell
+        /**
+         * STEP 5: Add 'mousedown' & 'mouseover' event listeners to the cell
+         * NOTES:
+         *  - 'mouseover' event ONLY enables click & drag behaviour
+         *  - 'mousedown' event ONLY enables click behaviour
+         */
         cell.addEventListener("mousedown", markCell);
+        cell.addEventListener("mouseover", markCell);
 
         // STEP 6: Add cell to 'board' DOM
         board.appendChild(cell);
@@ -63,10 +69,13 @@ function colorSelect(e) {
 
 function markCell(e) {
 
-    // STEP 1: Add 'marked' class to the cell
+    // STEP 1: Only mark if mouse is being pressed down
+    if (isMouseDown === false && e.type !== "mousedown") return;
+
+    // STEP : Add 'marked' class to the cell
     e.target.classList.add("marked");
 
-    // STEP 2: Change the background color of the cell
+    // STEP : Change the background color of the cell
     e.target.style.backgroundColor = color;
 }
 
@@ -82,11 +91,19 @@ const colorPicker = document.getElementById("color-picker");
 let mode = null;
 let color = colorPicker.value;
 
-// STEP 3: Preload & execute necessary functions
+/**
+ * STEP 3: Code to check if mouse is being pressed
+ * @link https://stackoverflow.com/questions/322378/javascript-check-if-mouse-button-down
+ */
+let isMouseDown = false;
+document.body.onmousedown = () => isMouseDown = true;
+document.body.onmouseup = () => isMouseDown = false;
+
+// STEP : Preload & execute necessary functions
 window.onload = function() {
     generateBoard();
 }
-// STEP 4: Handle board resetting & generation
+// STEP : Handle board resetting & generation
 pixelSlider.addEventListener("input", generateBoard);
 
 // STEP 5: Handle pencil functionality
