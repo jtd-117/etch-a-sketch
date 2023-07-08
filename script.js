@@ -49,7 +49,7 @@ function generateBoard() {
     addBoardCells(dimensions);
 
     // STEP 4: Display the board dimensions
-    size.textContent = `${dimensions} x ${dimensions}`;
+    size.textContent = `Dimensions: ${dimensions} x ${dimensions}`;
 }
 /* -------------------------------------------------------------------------- */
 /**
@@ -68,8 +68,6 @@ function markCell(e) {
 
     // STEP 2: Change the background color of the cell
     e.target.style.backgroundColor = color;
-    
-    console.log(e.target.classList);
 }
 
 /* -------------------------------------------------------------------------- */
