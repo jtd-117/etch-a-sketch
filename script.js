@@ -24,7 +24,10 @@ function addBoardCells(dimensions) {
         // STEP 4: Add 'cell' class
         cell.classList.add("cell");
 
-        // STEP 5: Add cell to 'board' DOM
+        // STEP 5: Add 'click' event listener to the cell
+        cell.addEventListener("mousedown", markCell);
+
+        // STEP 6: Add cell to 'board' DOM
         board.appendChild(cell);
     }
 }
@@ -56,6 +59,19 @@ function generateBoard() {
 function colorSelect(e) {
     color = e.target.value;
 }
+/* -------------------------------------------------------------------------- */
+
+function markCell(e) {
+
+    // STEP 1: Add 'marked' class to the cell
+    e.target.classList.add("marked");
+
+    // STEP 2: Change the background color of the cell
+    e.target.style.backgroundColor = color;
+    
+    console.log(e.target.classList);
+}
+
 /* -------------------------------------------------------------------------- */
 
 // STEP 1: Initialise queried document tags
