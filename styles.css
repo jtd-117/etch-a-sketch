@@ -19,10 +19,6 @@ body {
     font-family: "vt323", sans-serif;
 }
 
-input {
-    font-family: "vt323", sans-serif;
-}
-
 main {
     display: flex;
     flex-flow: row wrap;
@@ -34,9 +30,18 @@ main {
 
 /* -------------------------------------------------------------------------- */
 
+/* Header & Title */
+
+header {
+    font-size: x-large;
+}
+
+/* -------------------------------------------------------------------------- */
+
 /* Sketch Board */
 
 #board {
+    margin: 20px;
     inline-size: 500px;
     block-size: 500px;
     display: grid;
@@ -48,10 +53,21 @@ main {
 /* Sketch Menu Options */
 
 #menu {
+    padding: 20px;
     display: inherit;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+#menu * {
+    margin: 10px;
+}
+
+input,
+#size {
+    font-family: "vt323", sans-serif;
+    font-size: x-large;
 }
 
 /* -------------------------------------------------------------------------- */
