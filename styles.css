@@ -48,6 +48,11 @@ header {
     border: 1px solid black;
 }
 
+/* Temporary for visualisation */
+.cell {
+    border: 1px dotted blue;
+}
+
 /* -------------------------------------------------------------------------- */
 
 /* Sketch Menu Options */
