@@ -96,8 +96,8 @@ let color = colorPicker.value;
  * @link https://stackoverflow.com/questions/322378/javascript-check-if-mouse-button-down
  */
 let isMouseDown = false;
-document.body.onmousedown = () => isMouseDown = true;
-document.body.onmouseup = () => isMouseDown = false;
+board.onmousedown = () => isMouseDown = true;
+board.onmouseup = () => isMouseDown = false;
 
 // STEP : Preload & execute necessary functions
 window.onload = function() {
