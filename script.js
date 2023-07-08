@@ -66,7 +66,10 @@ function colorSelect(e) {
     color = e.target.value;
 }
 /* -------------------------------------------------------------------------- */
-
+/**
+ * @description     Change's a cell by a given background color
+ * @param {Event}   e The 'cell' div triggered by the event
+ */
 function markCell(e) {
 
     // STEP 1: Only mark if mouse is being pressed down
@@ -78,7 +81,6 @@ function markCell(e) {
     // STEP : Change the background color of the cell
     e.target.style.backgroundColor = color;
 }
-
 /* -------------------------------------------------------------------------- */
 
 // STEP 1: Initialise queried document tags
