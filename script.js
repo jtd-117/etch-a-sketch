@@ -21,12 +21,12 @@ function changeMarkerMode(e) {
     // CASE A: Pencil has been pressed
     if (e.target.getAttribute("id") === markerModes.Pencil) {
         marker = markerModes.Pencil;
-        color = pencilColor.value;
+        markerColor = pencilColor.value;
 
     // CASE B: Eraser has been pressed
     } else if (e.target.getAttribute("id") === markerModes.Eraser) {
         marker = markerModes.Eraser;
-        color = eraserColor.value;
+        markerColor = eraserColor.value;
 
     // CASE C: Nyan Cat has been pressed
     } else {
@@ -94,7 +94,7 @@ function generateBoard() {
  * @param {Event}   e The selected 'color' input
  */
 function colorSelect(e) {
-    color = e.target.value;
+    markerColor = e.target.value;
 }
 /* -------------------------------------------------------------------------- */
 /**
@@ -112,9 +112,8 @@ function markCell(e) {
     } else {
         e.target.classList.add("marked");
     }
-
     // STEP 3: Change the background color of the cell
-    e.target.style.backgroundColor = color;
+    e.target.style.backgroundColor = markerColor;
 }
 /* -------------------------------------------------------------------------- */
 /**
@@ -158,7 +157,7 @@ const pixelSlider = document.getElementById("pixel-slider");
 
 // STEP : Initialise variables
 let marker = markerModes.Pencil;
-let color = pencilColor.value;
+let markerColor = pencilColor.value;
 
 /**
  * STEP : Code to check if mouse is being pressed
