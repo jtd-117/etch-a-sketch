@@ -19,20 +19,20 @@ const markerModes = Object.freeze({
 function changeMarkerMode(e) {
     
     // CASE A: Pencil has been pressed
-    if (e.target.getAttribute("id") === markerModes.pencil) {
-        marker = markerModes.pencil;
+    if (e.target.getAttribute("id") === markerModes.Pencil) {
+        marker = markerModes.Pencil;
+        color = pencilColor.value;
 
     // CASE B: Eraser has been pressed
     } else if (e.target.getAttribute("id") === markerModes.Eraser) {
-        marker = markerModes.eraser;
+        marker = markerModes.Eraser;
+        color = eraserColor.value;
 
     // CASE C: Nyan Cat has been pressed
     } else {
         marker = markerModes.NyanCat;
     }
-    console.log(e.target.getAttribute("id") === markerModes.Pencil);
 }
-
 /* -------------------------------------------------------------------------- */
 /**
  * @description     (AUXILIARY) ADDS 'dimensions' x 'dimensions' cells to 
@@ -153,6 +153,7 @@ pencil.addEventListener("click", changeMarkerMode);
 pencilColor.addEventListener("input", colorSelect);
 
 // STEP : Handle eraser & reset functionality
-
+eraser.addEventListener("click", changeMarkerMode);
+eraserColor.addEventListener("input", colorSelect);
 
 // STEP : Handle grid toggling
