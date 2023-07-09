@@ -110,8 +110,18 @@ function colorSelect(e) {
     }
 }
 /* -------------------------------------------------------------------------- */
+
 /**
- * @description     Change's a cell by a given background color
+ * @description         Randomly generates a HEX value as a string.
+ * @returns {string}    A random HEX value
+ */
+function generateRandomHex() {
+    return "#" + Math.floor(Math.random()*16777215).toString(16);
+}
+
+/* -------------------------------------------------------------------------- */
+/**
+ * @description     Change's a cell by a given background color.
  * @param {Event}   e The 'cell' div triggered by the event
  */
 function markCell(e) {
@@ -127,9 +137,7 @@ function markCell(e) {
     }
     // STEP 3: Change the background color of the cell depending on 'marker'
     if (marker === markerModes.NyanCat) {
-        
-        // ADD CODE HERE
-
+        e.target.style.backgroundColor = generateRandomHex();
     } else {
         e.target.style.backgroundColor = markerColor;
     }
