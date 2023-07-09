@@ -4,7 +4,7 @@
  * @link            https://github.com/jtd-117
 * --------------------------------------------------------------------------- */
 /**
- * @description An ENUM for the different MARKER modes.
+ * @description An ENUM for the different 'marker' modes.
  */
 const markerModes = Object.freeze({
     Pencil: "pencil",
@@ -132,6 +132,15 @@ function resetBoard() {
         cell.style.backgroundColor = eraserColor.value;
     });
 }
+/* -------------------------------------------------------------------------- */
+/**
+ * @description An ENUM for the differ 'grid' modes.
+ */
+const gridModes = Object.freeze({
+    None: "None",
+    Solid: "Solid",
+    Dotted: "Dotted"
+});
 /* -------------------------------------------------------------------------- */
 
 // STEP 1: Initialise queried document tags
