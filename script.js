@@ -103,6 +103,8 @@ function colorSelect(e) {
  */
 function markCell(e) {
 
+    console.log(marker);
+
     // STEP 1: Only mark if mouse is being pressed down
     if (isMouseDown === false && e.type !== "mousedown") return;
 
@@ -112,8 +114,14 @@ function markCell(e) {
     } else {
         e.target.classList.add("marked");
     }
-    // STEP 3: Change the background color of the cell
-    e.target.style.backgroundColor = markerColor;
+    // STEP 3: Change the background color of the cell depending on 'marker'
+    if (marker === markerModes.NyanCat) {
+        
+        // ADD CODE HERE
+
+    } else {
+        e.target.style.backgroundColor = markerColor;
+    }
 }
 /* -------------------------------------------------------------------------- */
 /**
@@ -221,7 +229,7 @@ reset.addEventListener("click", resetBoard);
 grid.addEventListener("click", changeGridStyle);
 
 // STEP : Handle Nyan Cat functionality
-
+nyanCat.addEventListener("click", changeMarkerMode);
 
 // STEP : Handle pixel slider functionality
 pixelSlider.addEventListener("input", generateBoard);
