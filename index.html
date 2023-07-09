@@ -10,34 +10,45 @@
     </head>
     <body>
         
-        <!-- SECTION 1 - TITLE -->
+        <!-- SECTION 1 - Title -->
         <header>
             <h1>Pixel Sketcher</h1>
         </header>
 
-        <!-- SECTION 2 - PIXEL BOARD & MENU -->
+        <!-- SECTION 2 - Pixel Board & Menu -->
         <main>
 
-            <!-- SECTION 2A - PIXEL BOARD CONTAINER -->
+            <!-- SECTION 2A - Pixel Board Container -->
             <div id="board"></div>
 
-            <!-- SECTION 2B - OPTIONS MENU -->
+            <!-- SECTION 2B - Options Menu -->
             <div id="menu">
 
-                <input id="pencil-color" type="color">
-                <input id="pencil" type="button" value="Pencil">
+                <!-- SECTION 2BI - Pencil Container -->
+                <div class="menu-container-1">
+                    <input id="pencil-color" type="color">
+                    <input id="pencil" type="button" value="Pencil">
+                </div>
 
-                <input id="eraser" type="button" value="Eraser">
-                <input id="reset" type="button" value="Reset">
-                
+                <!-- SECTION 2BII - Eraser & Reset Container -->
+                <div class="menu-container-2">
+                    <input id="eraser-color" type="color">
+                    <input id="eraser" type="button" value="Eraser">
+                    <input id="reset" type="button" value="Reset">
+                </div>
+
+                <!-- SECTION 2BIII - Rainbow Mode -->
                 <input id="nyan-cat" type="button" value="Nyan Cat">
 
-                <div id="size">Dimensions: 32 X 32</div>
-                <input id="pixel-slider" type="range" min="1" max="100" value="50">
+                <!-- SECTION 2BIV - Dimensions Container -->
+                <div class="menu-container-3">
+                    <span id="size">Dimensions: 32 X 32</span>
+                    <input id="pixel-slider" type="range" min="1" max="100" value="50">
+                </div>
             </div>
         </main>
 
-        <!-- SECTION 3 - ACKNOWLEDGEMENTS -->
+        <!-- SECTION 3 - Acknowledgements -->
         <footer>
             <h2>Coded by <a href="https://github.com/jtd-117/etch-a-sketch">jtd-117</a></h2>
         </footer>
