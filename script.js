@@ -141,9 +141,38 @@ const gridStyles = Object.freeze({
     Dotted: "Dotted"
 });
 /* -------------------------------------------------------------------------- */
+/**
+ * @description     
+ * @param {Event}   e 
+ */
+function changeGridStyle(e) {
 
+    // STEP 1: Get all cells
+    let cells = document.querySelectorAll(`div[class="cell"], 
+        div[class="cell marked"]`);
 
+    // CASE 2A: 'None' transitions to 'Solid'
+    if (e.target.value === gridStyles.None) {
+        grid.value = `${gridStyles.Solid}`;
+        cells.forEach((cell) => {
+            cell.style.border = `1px ${gridStyles.Solid} ${gridColor.value}`;
+        });
 
+    // CASE 2B: 'Solid' transitions to 'Dotted'
+    } else if (e.target.value === gridStyles.Solid) {
+        grid.value = `${gridStyles.Dotted}`;
+        cells.forEach((cell) => {
+            cell.style.border = `1px ${gridStyles.Dotted} ${gridColor.value}`;
+        });
+
+    // CASE 2C: 'Dotted' transitions to 'None'
+    } else {
+        grid.value = `${gridStyles.None}`;
+        cells.forEach((cell) => {
+            cell.style.border = `0`;
+        });
+    }
+}
 /* -------------------------------------------------------------------------- */
 
 // STEP 1: Initialise queried document tags
@@ -188,7 +217,7 @@ eraserColor.addEventListener("input", colorSelect);
 reset.addEventListener("click", resetBoard);
 
 // STEP : Handle grid toggling
-
+grid.addEventListener("click", changeGridStyle);
 
 // STEP : Handle Nyan Cat functionality
 
