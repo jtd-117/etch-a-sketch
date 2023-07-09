@@ -221,6 +221,20 @@ function changeGridStyle(e) {
     }
 }
 /* -------------------------------------------------------------------------- */
+/**
+ * @description Plays the audio stored in the HTML tag with `id`.
+ * @param       {string} id The HTML tag that contains the audio
+ */
+function playAudio(id) {
+
+    // STEP 1: Locate the audio in the DOM
+    const audio = document.getElementById(id);
+
+    // STEP 2: Execute the media if it exists
+    if (!audio) return;
+    audio.play();
+}
+/* -------------------------------------------------------------------------- */
 
 // STEP 1: Initialise queried document tags
 const board = document.getElementById("board");
@@ -257,18 +271,24 @@ window.onload = generateBoard;
 // STEP 6: Handle pencil functionality
 pencil.addEventListener("click", changeMarkerMode);
 pencilColor.addEventListener("input", colorSelect);
+pencil.addEventListener("click", () => playAudio("pencil-mp3"));
 
 // STEP 7: Handle eraser & reset functionality
 eraser.addEventListener("click", changeMarkerMode);
 eraserColor.addEventListener("input", colorSelect);
+eraser.addEventListener("click", () => playAudio("eraser-mp3"));
 reset.addEventListener("click", resetBoard);
+reset.addEventListener("click", () => playAudio("reset-mp3"));
 
 // STEP 8: Handle grid toggling
 grid.addEventListener("click", changeGridStyle);
 gridColor.addEventListener("input", colorSelect);
+grid.addEventListener("click", () => playAudio("grid-mp3"));
 
 // STEP 9: Handle Nyan Cat functionality
 nyanCat.addEventListener("click", changeMarkerMode);
+nyanCat.addEventListener("click", () => playAudio("nyan-mp3"));
 
 // STEP 10: Handle pixel slider functionality
 pixelSlider.addEventListener("input", generateBoard);
+pixelSlider.addEventListener("input", () => playAudio("slider-mp3"));
