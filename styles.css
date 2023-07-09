@@ -50,7 +50,7 @@ header {
 
 /* Temporary for visualisation */
 .cell {
-    border: 1px dotted blue;
+    border: 1px solid gray;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -59,13 +59,13 @@ header {
 
 #menu {
     padding: 20px;
-    display: inherit;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-#menu * {
+#menu > * {
     margin: 10px;
 }
 
