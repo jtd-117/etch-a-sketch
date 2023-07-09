@@ -50,7 +50,7 @@ function addBoardCells(dimensions) {
     for (let i = 0; i < dimensions * dimensions; i++) {
 
         // STEP 3: Initialise the new cell
-        cell = document.createElement('div')
+        cell = document.createElement('div');
 
         // STEP 4: Add 'cell' class
         cell.classList.add("cell");
@@ -66,6 +66,22 @@ function addBoardCells(dimensions) {
 
         // STEP 6: Add cell to 'board' DOM
         board.appendChild(cell);
+    }
+    // STEP 7: Add any grid effect if any
+    if (gridStyle !== gridStyles.None) {
+
+        // STEP 7A: Get all cells
+        let cells = document.querySelectorAll(`div[class="cell"], 
+            div[class="cell marked"]`);
+
+        // STEP 7B: Adjust the cell's border style accordingly
+        cells.forEach((cell) => {
+            if (gridStyle === gridStyles.Solid) {
+                cell.style.borderStyle = gridStyles.Solid;
+            } else {
+                cell.style.borderStyle = gridStyles.Dotted;
+            }
+        });
     }
 }
 /* -------------------------------------------------------------------------- */
@@ -181,6 +197,7 @@ function changeGridStyle(e) {
 
     // CASE 2A: 'None' transitions to 'Solid'
     if (e.target.value === gridStyles.None) {
+        gridStyle = gridStyles.Solid;
         grid.value = `${gridStyles.Solid}`;
         cells.forEach((cell) => {
             cell.style.border = `1px ${gridStyles.Solid} ${gridColor.value}`;
@@ -188,6 +205,7 @@ function changeGridStyle(e) {
 
     // CASE 2B: 'Solid' transitions to 'Dotted'
     } else if (e.target.value === gridStyles.Solid) {
+        gridStyle = gridStyles.Dotted;
         grid.value = `${gridStyles.Dotted}`;
         cells.forEach((cell) => {
             cell.style.border = `1px ${gridStyles.Dotted} ${gridColor.value}`;
@@ -195,6 +213,7 @@ function changeGridStyle(e) {
 
     // CASE 2C: 'Dotted' transitions to 'None'
     } else {
+        gridStyle = gridStyles.None;
         grid.value = `${gridStyles.None}`;
         cells.forEach((cell) => {
             cell.style.border = `0`;
