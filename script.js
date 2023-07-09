@@ -90,11 +90,24 @@ function generateBoard() {
 }
 /* -------------------------------------------------------------------------- */
 /**
- * @description     Adjusts the 'color' variable to match the selected input
+ * @description     Adjusts the color-based variables to match the selected 
+ *                  input.
  * @param {Event}   e The selected 'color' input
  */
 function colorSelect(e) {
-    markerColor = e.target.value;
+    
+    // CASE A: Changing the maker's color
+    if (e.target.getAttribute("id") !== "grid-color") {
+        markerColor = e.target.value;
+
+    // CASE B: Changing the grid's color
+    } else {
+        let cells = document.querySelectorAll(`div[class="cell"], 
+            div[class="cell marked"]`);
+        cells.forEach((cell) => {
+            cell.style.borderColor = `${gridColor.value}`;
+        });
+    }
 }
 /* -------------------------------------------------------------------------- */
 /**
@@ -102,8 +115,6 @@ function colorSelect(e) {
  * @param {Event}   e The 'cell' div triggered by the event
  */
 function markCell(e) {
-
-    console.log(marker);
 
     // STEP 1: Only mark if mouse is being pressed down
     if (isMouseDown === false && e.type !== "mousedown") return;
@@ -197,39 +208,40 @@ const nyanCat = document.getElementById("nyan-cat");
 const size = document.getElementById("size");
 const pixelSlider = document.getElementById("pixel-slider");
 
-// STEP : Initialise variables
+// STEP 2: Initialise variables
 let marker = markerModes.Pencil;
 let markerColor = pencilColor.value;
 let gridStyle = gridStyles.None;
 
 /**
- * STEP : Code to check if mouse is being pressed
+ * STEP 3: Code to check if mouse is being pressed
  * @link https://stackoverflow.com/questions/322378/javascript-check-if-mouse-button-down
  */
 let isMouseDown = false;
 board.onmousedown = () => isMouseDown = true;
 board.onmouseup = () => isMouseDown = false;
 
-// STEP : Preload & execute necessary functions
+// STEP 4: Preload & execute necessary functions
 window.onload = generateBoard;
 
-// STEP : Handle day/night toggling
+// STEP 5: Handle day/night toggling
 
 
-// STEP : Handle pencil functionality
+// STEP 6: Handle pencil functionality
 pencil.addEventListener("click", changeMarkerMode);
 pencilColor.addEventListener("input", colorSelect);
 
-// STEP : Handle eraser & reset functionality
+// STEP 7: Handle eraser & reset functionality
 eraser.addEventListener("click", changeMarkerMode);
 eraserColor.addEventListener("input", colorSelect);
 reset.addEventListener("click", resetBoard);
 
-// STEP : Handle grid toggling
+// STEP 8: Handle grid toggling
 grid.addEventListener("click", changeGridStyle);
+gridColor.addEventListener("input", colorSelect);
 
-// STEP : Handle Nyan Cat functionality
+// STEP 9: Handle Nyan Cat functionality
 nyanCat.addEventListener("click", changeMarkerMode);
 
-// STEP : Handle pixel slider functionality
+// STEP 10: Handle pixel slider functionality
 pixelSlider.addEventListener("input", generateBoard);
