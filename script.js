@@ -55,7 +55,7 @@ function generateBoard() {
     addBoardCells(dimensions);
 
     // STEP 4: Display the board dimensions
-    size.textContent = `Dimensions: ${dimensions} x ${dimensions}`;
+    size.textContent = `Size: ${dimensions} x ${dimensions}`;
 }
 /* -------------------------------------------------------------------------- */
 /**
