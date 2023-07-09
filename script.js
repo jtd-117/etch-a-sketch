@@ -135,11 +135,15 @@ function resetBoard() {
 /**
  * @description An ENUM for the differ 'grid' modes.
  */
-const gridModes = Object.freeze({
+const gridStyles = Object.freeze({
     None: "None",
     Solid: "Solid",
     Dotted: "Dotted"
 });
+/* -------------------------------------------------------------------------- */
+
+
+
 /* -------------------------------------------------------------------------- */
 
 // STEP 1: Initialise queried document tags
@@ -158,6 +162,7 @@ const pixelSlider = document.getElementById("pixel-slider");
 // STEP : Initialise variables
 let marker = markerModes.Pencil;
 let markerColor = pencilColor.value;
+let gridStyle = gridStyles.None;
 
 /**
  * STEP : Code to check if mouse is being pressed
