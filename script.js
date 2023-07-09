@@ -13,6 +13,28 @@ const markerModes = Object.freeze({
 });
 /* -------------------------------------------------------------------------- */
 /**
+ * @description     
+ * @param {Event}   e 
+ */
+function changeMarkerMode(e) {
+    
+    // CASE A: Pencil has been pressed
+    if (e.target.getAttribute("id") === markerModes.pencil) {
+        marker = markerModes.pencil;
+
+    // CASE B: Eraser has been pressed
+    } else if (e.target.getAttribute("id") === markerModes.Eraser) {
+        marker = markerModes.eraser;
+
+    // CASE C: Nyan Cat has been pressed
+    } else {
+        marker = markerModes.NyanCat;
+    }
+    console.log(e.target.getAttribute("id") === markerModes.Pencil);
+}
+
+/* -------------------------------------------------------------------------- */
+/**
  * @description     (AUXILIARY) ADDS 'dimensions' x 'dimensions' cells to 
  *                  'board' div.
  * @param {number}  dimensions 
@@ -94,9 +116,16 @@ function markCell(e) {
 
 // STEP : Initialise queried document tags
 const board = document.getElementById("board");
-const pixelSlider = document.getElementById("pixel-slider");
-const size = document.getElementById("size");
+const pencil = document.getElementById("pencil");
 const pencilColor = document.getElementById("pencil-color");
+const eraser = document.getElementById("eraser");
+const eraserColor = document.getElementById("eraser-color");
+const reset = document.getElementById("reset");
+const grid = document.getElementById("grid");
+const gridColor = document.getElementById("grid-color");
+const nyanCat = document.getElementById("nyan-cat");
+const size = document.getElementById("size");
+const pixelSlider = document.getElementById("pixel-slider");
 
 // STEP : Initialise variables
 let marker = markerModes.Pencil;
@@ -111,16 +140,16 @@ board.onmousedown = () => isMouseDown = true;
 board.onmouseup = () => isMouseDown = false;
 
 // STEP : Preload & execute necessary functions
-window.onload = function() {
-    generateBoard();
-}
+window.onload = generateBoard;
+
 // STEP : Handle day/night toggling
 
 
-// STEP : Handle board resetting & generation
+// STEP : Handle pixel slider functionality
 pixelSlider.addEventListener("input", generateBoard);
 
 // STEP : Handle pencil functionality
+pencil.addEventListener("click", changeMarkerMode);
 pencilColor.addEventListener("input", colorSelect);
 
 // STEP : Handle eraser & reset functionality
