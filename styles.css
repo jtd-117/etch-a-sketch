@@ -70,7 +70,8 @@ header {
 }
 
 input,
-#size {
+#size,
+#grid-title {
     font-family: "vt323", sans-serif;
     font-size: x-large;
 }
