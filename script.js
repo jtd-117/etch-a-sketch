@@ -4,6 +4,15 @@
  * @link            https://github.com/jtd-117
 * --------------------------------------------------------------------------- */
 /**
+ * @description An ENUM for the different MARKER modes.
+ */
+const markerModes = Object.freeze({
+    Pencil: "pencil",
+    Eraser: "eraser",
+    NyanCat: "nyan-cat"
+});
+/* -------------------------------------------------------------------------- */
+/**
  * @description     (AUXILIARY) ADDS 'dimensions' x 'dimensions' cells to 
  *                  'board' div.
  * @param {number}  dimensions 
@@ -72,7 +81,7 @@ function colorSelect(e) {
  */
 function markCell(e) {
 
-    // STEP 1: Only mark if mouse is being pressed down
+    // STEP : Only mark if mouse is being pressed down
     if (isMouseDown === false && e.type !== "mousedown") return;
 
     // STEP : Add 'marked' class to the cell
@@ -83,18 +92,18 @@ function markCell(e) {
 }
 /* -------------------------------------------------------------------------- */
 
-// STEP 1: Initialise queried document tags
+// STEP : Initialise queried document tags
 const board = document.getElementById("board");
 const pixelSlider = document.getElementById("pixel-slider");
 const size = document.getElementById("size");
 const pencilColor = document.getElementById("pencil-color");
 
-// STEP 2: Initialise variables
-let mode = null;
+// STEP : Initialise variables
+let marker = markerModes.Pencil;
 let color = pencilColor.value;
 
 /**
- * STEP 3: Code to check if mouse is being pressed
+ * STEP : Code to check if mouse is being pressed
  * @link https://stackoverflow.com/questions/322378/javascript-check-if-mouse-button-down
  */
 let isMouseDown = false;
@@ -105,8 +114,16 @@ board.onmouseup = () => isMouseDown = false;
 window.onload = function() {
     generateBoard();
 }
+// STEP : Handle day/night toggling
+
+
 // STEP : Handle board resetting & generation
 pixelSlider.addEventListener("input", generateBoard);
 
-// STEP 5: Handle pencil functionality
+// STEP : Handle pencil functionality
 pencilColor.addEventListener("input", colorSelect);
+
+// STEP : Handle eraser & reset functionality
+
+
+// STEP : Handle grid toggling
