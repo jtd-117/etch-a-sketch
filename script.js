@@ -165,9 +165,6 @@ window.onload = generateBoard;
 // STEP : Handle day/night toggling
 
 
-// STEP : Handle pixel slider functionality
-pixelSlider.addEventListener("input", generateBoard);
-
 // STEP : Handle pencil functionality
 pencil.addEventListener("click", changeMarkerMode);
 pencilColor.addEventListener("input", colorSelect);
@@ -178,3 +175,10 @@ eraserColor.addEventListener("input", colorSelect);
 reset.addEventListener("click", resetBoard);
 
 // STEP : Handle grid toggling
+
+
+// STEP : Handle Nyan Cat functionality
+
+
+// STEP : Handle pixel slider functionality
+pixelSlider.addEventListener("input", generateBoard);
