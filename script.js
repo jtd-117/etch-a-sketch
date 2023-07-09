@@ -87,11 +87,11 @@ function markCell(e) {
 const board = document.getElementById("board");
 const pixelSlider = document.getElementById("pixel-slider");
 const size = document.getElementById("size");
-const colorPicker = document.getElementById("color-picker");
+const pencilColor = document.getElementById("pencil-color");
 
 // STEP 2: Initialise variables
 let mode = null;
-let color = colorPicker.value;
+let color = pencilColor.value;
 
 /**
  * STEP 3: Code to check if mouse is being pressed
@@ -109,4 +109,4 @@ window.onload = function() {
 pixelSlider.addEventListener("input", generateBoard);
 
 // STEP 5: Handle pencil functionality
-colorPicker.addEventListener("input", colorSelect);
+pencilColor.addEventListener("input", colorSelect);
