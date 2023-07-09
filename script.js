@@ -142,8 +142,9 @@ const gridStyles = Object.freeze({
 });
 /* -------------------------------------------------------------------------- */
 /**
- * @description     
- * @param {Event}   e 
+ * @description     Changes the grid style whenever the 'grid' button 
+ *                  is pressed.
+ * @param {Event}   e The event triggered by the 'grid' button
  */
 function changeGridStyle(e) {
 
