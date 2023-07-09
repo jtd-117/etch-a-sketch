@@ -75,6 +75,44 @@ input,
     font-size: x-large;
 }
 
+#menu, 
+.menu-container-1, 
+.menu-container-2, 
+.menu-container-3 {
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.menu-container-1 {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+#pencil-color {
+    align-self: center;
+}
+
+.menu-container-2 {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-areas: 
+        "color ."
+        "color .";
+}
+
+#eraser-color,
+#grid-color {
+    grid-area: color;
+    block-size: 100%;
+}
+
+.menu-container-3 {
+    display: flex;
+    flex-direction: column;
+}
+
 /* -------------------------------------------------------------------------- */
 
 /* Footer & Acknowledgements */
