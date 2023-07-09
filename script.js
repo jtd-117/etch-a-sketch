@@ -103,18 +103,38 @@ function colorSelect(e) {
  */
 function markCell(e) {
 
-    // STEP : Only mark if mouse is being pressed down
+    // STEP 1: Only mark if mouse is being pressed down
     if (isMouseDown === false && e.type !== "mousedown") return;
 
-    // STEP : Add 'marked' class to the cell
-    e.target.classList.add("marked");
+    // STEP 2: Add/Remove 'marked' class to the cell depending on 'marker'
+    if (marker === markerModes.Eraser) {
+        e.target.classList.remove("marked");
+    } else {
+        e.target.classList.add("marked");
+    }
 
-    // STEP : Change the background color of the cell
+    // STEP 3: Change the background color of the cell
     e.target.style.backgroundColor = color;
 }
 /* -------------------------------------------------------------------------- */
+/**
+ * @description Clears the entire board with the `eraserColor` value.
+ */
+function resetBoard() {
 
-// STEP : Initialise queried document tags
+    // STEP 1: Get all cells that are BOTH 'marked' & untouched
+    let cells = document.querySelectorAll(`div[class="cell"], 
+        div[class="cell marked"]`);
+
+    // STEP 2: For each cell remove the 'marked' class & color
+    cells.forEach((cell) => {
+        cell.classList.remove("marked");
+        cell.style.backgroundColor = eraserColor.value;
+    });
+}
+/* -------------------------------------------------------------------------- */
+
+// STEP 1: Initialise queried document tags
 const board = document.getElementById("board");
 const pencil = document.getElementById("pencil");
 const pencilColor = document.getElementById("pencil-color");
@@ -155,5 +175,6 @@ pencilColor.addEventListener("input", colorSelect);
 // STEP : Handle eraser & reset functionality
 eraser.addEventListener("click", changeMarkerMode);
 eraserColor.addEventListener("input", colorSelect);
+reset.addEventListener("click", resetBoard);
 
 // STEP : Handle grid toggling
