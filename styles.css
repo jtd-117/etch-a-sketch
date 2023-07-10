@@ -45,7 +45,7 @@ header {
     inline-size: 500px;
     block-size: 500px;
     display: grid;
-    border: 1px solid black;
+    border: 5px solid black;
 }
 
 /* -------------------------------------------------------------------------- */
