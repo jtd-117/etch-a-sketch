@@ -29,7 +29,7 @@ function changeMarkerMode(e) {
     } else if (e.target.getAttribute("id") === markerModes.Eraser) {
         marker = markerModes.Eraser;
         markerColor = eraserColor.value;
-        board.style.cursor = `auto`;
+        board.style.cursor = `url("images/eraser-cursor.gif"), auto`;
 
     // CASE C: Nyan Cat has been pressed
     } else {
