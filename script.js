@@ -253,10 +253,12 @@ const nyanCat = document.getElementById("nyan-cat");
 const size = document.getElementById("size");
 const pixelSlider = document.getElementById("pixel-slider");
 
-// STEP 2: Initialise variables
+// STEP 2: Initialise variables & execute onload functions
 let marker = markerModes.Pencil;
 let markerColor = pencilColor.value;
+board.style.cursor = `url("images/pencil-cursor.gif"), auto`;
 let gridStyle = gridStyles.None;
+window.onload = generateBoard;
 
 /**
  * STEP 3: Code to check if mouse is being pressed
@@ -266,33 +268,30 @@ let isMouseDown = false;
 board.onmousedown = () => isMouseDown = true;
 board.onmouseup = () => isMouseDown = false;
 
-// STEP 4: Preload & execute necessary functions
-window.onload = generateBoard;
-
-// STEP 5: Handle day/night toggling
+// STEP 4: Handle day/night toggling
 
 
-// STEP 6: Handle pencil functionality
+// STEP 5: Handle pencil functionality
 pencil.addEventListener("click", changeMarkerMode);
 pencilColor.addEventListener("input", colorSelect);
 pencil.addEventListener("click", () => playAudio("pencil-mp3"));
 
-// STEP 7: Handle eraser & reset functionality
+// STEP 6: Handle eraser & reset functionality
 eraser.addEventListener("click", changeMarkerMode);
 eraserColor.addEventListener("input", colorSelect);
 eraser.addEventListener("click", () => playAudio("eraser-mp3"));
 reset.addEventListener("click", resetBoard);
 reset.addEventListener("click", () => playAudio("reset-mp3"));
 
-// STEP 8: Handle grid toggling
+// STEP 7: Handle grid toggling
 grid.addEventListener("click", changeGridStyle);
 gridColor.addEventListener("input", colorSelect);
 grid.addEventListener("click", () => playAudio("grid-mp3"));
 
-// STEP 9: Handle Nyan Cat functionality
+// STEP 8: Handle Nyan Cat functionality
 nyanCat.addEventListener("click", changeMarkerMode);
 nyanCat.addEventListener("click", () => playAudio("nyan-mp3"));
 
-// STEP 10: Handle pixel slider functionality
+// STEP 9: Handle pixel slider functionality
 pixelSlider.addEventListener("input", generateBoard);
 pixelSlider.addEventListener("input", () => playAudio("slider-mp3"));
