@@ -42,7 +42,7 @@ footer h2 {
     inline-size: fit-content;
     padding-inline: 10px;
     margin-inline: auto;
-    background-color: lightgrey;
+    background-color: white;
     border: 1px solid black;
 }
 
@@ -70,7 +70,7 @@ footer h2 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: gray;
+    background-color: lightgray;
 }
 
 #menu > * {
@@ -97,7 +97,7 @@ input,
 .menu-container-2, 
 .menu-container-3 {
     inline-size: 90%;
-    background-color: lightgrey;
+    background-color: white;
 }
 
 .menu-container-1 {
