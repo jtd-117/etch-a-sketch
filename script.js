@@ -13,8 +13,9 @@ const markerModes = Object.freeze({
 });
 /* -------------------------------------------------------------------------- */
 /**
- * @description     
- * @param {Event}   e 
+ * @description     Changes the 'marker' value according to the button pressed.
+ * @param {Event}   e The event triggered by the 'pencil', 'eraser' & 
+ *                    'nyan-cat' button
  */
 function changeMarkerMode(e) {
     
@@ -40,7 +41,7 @@ function changeMarkerMode(e) {
 /**
  * @description     (AUXILIARY) ADDS 'dimensions' x 'dimensions' cells to 
  *                  'board' div.
- * @param {number}  dimensions 
+ * @param {number}  dimensions The number of pixels for width & height
  */
 function addBoardCells(dimensions) {
 
@@ -89,9 +90,9 @@ function addBoardCells(dimensions) {
 }
 /* -------------------------------------------------------------------------- */
 /**
- * @description     Adds cells (i.e. pixels) to the 'board' div according to 
- *                  the dimensions specified on the 'pixel-slider' input & 
- *                  displays the board dimensions.
+ * @description Adds cells (i.e. pixels) to the 'board' div according to 
+ *              the dimensions specified on the 'pixel-slider' input & 
+ *              displays the board dimensions.
  */
 function generateBoard() {
 
