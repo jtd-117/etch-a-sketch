@@ -60,6 +60,7 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: gray;
 }
 
 #menu > * {
@@ -86,6 +87,7 @@ input,
 .menu-container-2, 
 .menu-container-3 {
     inline-size: 90%;
+    background-color: lightgrey;
 }
 
 .menu-container-1 {
