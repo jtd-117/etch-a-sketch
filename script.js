@@ -81,9 +81,9 @@ function addBoardCells(dimensions) {
         // STEP 7B: Adjust the cell's border style accordingly
         cells.forEach((cell) => {
             if (gridStyle === gridStyles.Solid) {
-                cell.style.border = `0.5px ${gridStyles.Solid} ${gridColor.value}`;
+                cell.style.border = `0.1px ${gridStyles.Solid} ${gridColor.value}`;
             } else {
-                cell.style.border = `0.5px ${gridStyles.Dotted} ${gridColor.value}`;
+                cell.style.border = `0.1px ${gridStyles.Dotted} ${gridColor.value}`;
             }
         });
     }
@@ -204,7 +204,7 @@ function changeGridStyle(e) {
         gridStyle = gridStyles.Solid;
         grid.value = `${gridStyles.Solid}`;
         cells.forEach((cell) => {
-            cell.style.border = `0.5px ${gridStyles.Solid} ${gridColor.value}`;
+            cell.style.border = `0.1px ${gridStyles.Solid} ${gridColor.value}`;
         });
 
     // CASE 2B: 'Solid' transitions to 'Dotted'
@@ -212,7 +212,7 @@ function changeGridStyle(e) {
         gridStyle = gridStyles.Dotted;
         grid.value = `${gridStyles.Dotted}`;
         cells.forEach((cell) => {
-            cell.style.border = `0.5px ${gridStyles.Dotted} ${gridColor.value}`;
+            cell.style.border = `0.1px ${gridStyles.Dotted} ${gridColor.value}`;
         });
 
     // CASE 2C: 'Dotted' transitions to 'None'
