@@ -271,30 +271,27 @@ let isMouseDown = false;
 board.onmousedown = () => isMouseDown = true;
 board.onmouseup = () => isMouseDown = false;
 
-// STEP 4: Handle day/night toggling
-
-
-// STEP 5: Handle pencil functionality
+// STEP 4: Handle pencil functionality
 pencil.addEventListener("click", changeMarkerMode);
 pencilColor.addEventListener("input", colorSelect);
 pencil.addEventListener("click", () => playAudio("pencil-mp3"));
 
-// STEP 6: Handle eraser & reset functionality
+// STEP 5: Handle eraser & reset functionality
 eraser.addEventListener("click", changeMarkerMode);
 eraserColor.addEventListener("input", colorSelect);
 eraser.addEventListener("click", () => playAudio("eraser-mp3"));
 reset.addEventListener("click", resetBoard);
 reset.addEventListener("click", () => playAudio("reset-mp3"));
 
-// STEP 7: Handle grid toggling
+// STEP 6: Handle grid toggling
 grid.addEventListener("click", changeGridStyle);
 gridColor.addEventListener("input", colorSelect);
 grid.addEventListener("click", () => playAudio("grid-mp3"));
 
-// STEP 8: Handle Nyan Cat functionality
+// STEP 7: Handle Nyan Cat functionality
 nyanCat.addEventListener("click", changeMarkerMode);
 nyanCat.addEventListener("click", () => playAudio("nyan-mp3"));
 
-// STEP 9: Handle pixel slider functionality
+// STEP 8: Handle pixel slider functionality
 pixelSlider.addEventListener("input", generateBoard);
 pixelSlider.addEventListener("input", () => playAudio("slider-mp3"));

@@ -143,3 +143,31 @@ footer h2 a {
 footer h2 a:hover {
     text-decoration: underline;
 }
+
+/* -------------------------------------------------------------------------- */
+
+/* Media Queries For Responsive Design */
+
+@media (max-width: 580px) {
+
+    #board {
+        inline-size: 400px;
+        block-size: 400px;
+    }
+}
+
+@media (max-width: 450px) {
+
+    #board {
+        inline-size: 300px;
+        block-size: 300px;
+    }
+}
+
+@media (max-width: 340px) {
+
+    #board {
+        inline-size: 250px;
+        block-size: 250px;
+    }
+}
