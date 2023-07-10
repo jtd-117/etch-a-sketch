@@ -34,7 +34,7 @@ function changeMarkerMode(e) {
     // CASE C: Nyan Cat has been pressed
     } else {
         marker = markerModes.NyanCat;
-        board.style.cursor = `url("images/nyan-cat-cursor.png"), auto`;
+        board.style.cursor = `url("images/nyan-cat-cursor.gif"), auto`;
     }
 }
 /* -------------------------------------------------------------------------- */
