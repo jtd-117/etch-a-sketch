@@ -59,6 +59,9 @@ function addBoardCells(dimensions) {
         // STEP 4: Add 'cell' class
         cell.classList.add("cell");
 
+        // STEP 5: Fill the cell with color
+        cell.style.backgroundColor = eraserColor.value;
+
         /**
          * STEP 5: Add 'mousedown' & 'mouseover' event listeners to the cell
          * NOTES:
