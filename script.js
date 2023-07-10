@@ -23,7 +23,7 @@ function changeMarkerMode(e) {
     if (e.target.getAttribute("id") === markerModes.Pencil) {
         marker = markerModes.Pencil;
         markerColor = pencilColor.value;
-        board.style.cursor = `auto`;
+        board.style.cursor = `url("images/pencil-cursor.gif"), auto`;
 
     // CASE B: Eraser has been pressed
     } else if (e.target.getAttribute("id") === markerModes.Eraser) {
