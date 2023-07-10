@@ -17,6 +17,7 @@ body {
     flex-direction: column;
     text-align: center;
     font-family: "vt323", sans-serif;
+    background-image: url("images/day-wallpaper.jpeg");
 }
 
 main {
@@ -42,6 +43,7 @@ footer h2 {
     padding-inline: 10px;
     margin-inline: auto;
     background-color: lightgrey;
+    border: 1px solid black;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -53,7 +55,7 @@ footer h2 {
     inline-size: 500px;
     block-size: 500px;
     display: grid;
-    border: 3px solid black;
+    border: 1px solid black;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -87,6 +89,7 @@ input,
 .menu-container-2, 
 .menu-container-3 {
     padding: 10px;
+    border: 1px solid black;
     border-radius: 5px;
 }
 
