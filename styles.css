@@ -70,8 +70,7 @@ footer h2 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #fcffdb
-    ;
+    background-color: #fcffdb;
 }
 
 #menu > * {
@@ -164,10 +163,18 @@ footer h2 a:hover {
     }
 }
 
-@media (max-width: 340px) {
+@media (max-width: 350px) {
+
+    header {
+        font-size: medium;
+    }
 
     #board {
         inline-size: 250px;
         block-size: 250px;
+    }
+
+    footer {
+        font-size: small;
     }
 }
