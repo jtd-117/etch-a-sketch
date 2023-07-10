@@ -22,15 +22,18 @@ function changeMarkerMode(e) {
     if (e.target.getAttribute("id") === markerModes.Pencil) {
         marker = markerModes.Pencil;
         markerColor = pencilColor.value;
+        board.style.cursor = `auto`;
 
     // CASE B: Eraser has been pressed
     } else if (e.target.getAttribute("id") === markerModes.Eraser) {
         marker = markerModes.Eraser;
         markerColor = eraserColor.value;
+        board.style.cursor = `auto`;
 
     // CASE C: Nyan Cat has been pressed
     } else {
         marker = markerModes.NyanCat;
+        board.style.cursor = `url("images/nyan-cat-cursor.png"), auto`;
     }
 }
 /* -------------------------------------------------------------------------- */
