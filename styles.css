@@ -36,6 +36,14 @@ header {
     font-size: x-large;
 }
 
+header h1,
+footer h2 {
+    inline-size: fit-content;
+    padding-inline: 10px;
+    margin-inline: auto;
+    background-color: lightgrey;
+}
+
 /* -------------------------------------------------------------------------- */
 
 /* Sketch Board */
@@ -45,7 +53,7 @@ header {
     inline-size: 500px;
     block-size: 500px;
     display: grid;
-    border: 5px solid black;
+    border: 3px solid black;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -79,7 +87,6 @@ input,
 .menu-container-2, 
 .menu-container-3 {
     padding: 10px;
-    border: 1px solid black;
     border-radius: 5px;
 }
 
@@ -123,4 +130,12 @@ input,
 
 footer {
     font-size: large;
+}
+
+footer h2 a {
+    text-decoration: none;
+}
+
+footer h2 a:hover {
+    text-decoration: underline;
 }
