@@ -43,7 +43,7 @@ footer h2 {
     padding-inline: 10px;
     margin-inline: auto;
     background-color: white;
-    border: 1px solid black;
+    border: 2px solid black;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -55,7 +55,7 @@ footer h2 {
     inline-size: 500px;
     block-size: 500px;
     display: grid;
-    border: 1px solid black;
+    border: 5px solid black;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -70,7 +70,8 @@ footer h2 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: lightgray;
+    background-color: #fcffdb
+    ;
 }
 
 #menu > * {
