@@ -127,7 +127,7 @@ input,
     flex-direction: column;
 }
 
-.active {
+.marker {
     color: white;
     background-color: black;
 }
