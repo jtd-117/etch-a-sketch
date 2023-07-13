@@ -277,9 +277,30 @@ function playAudio(id) {
     audio.play();
 }
 /* -------------------------------------------------------------------------- */
+/**
+ * @description Handles Day/Night functionality.
+ */
+function toggleDayNightMode() {
+
+    // STEP 1: Change the day/night wallpapers
+    document.body.classList.toggle("night-wallpaper");
+
+    // CASE 2A: Transitioned to 'Night' mode
+    if (document.body.classList.contains("night-wallpaper")) {
+        wallpaper.value = "Night";
+        menu.style.backgroundColor = "gray";
+
+    // CASE 2B: Transitioned to 'Day' mode
+    } else {
+        wallpaper.value = "Day";
+        menu.style.backgroundColor = "beige";
+    }
+}
+/* -------------------------------------------------------------------------- */
 
 // STEP 1: Initialise queried document tags
 const board = document.getElementById("board");
+const menu = document.getElementById("menu");
 const pencil = document.getElementById("pencil");
 const pencilColor = document.getElementById("pencil-color");
 const eraser = document.getElementById("eraser");
@@ -290,6 +311,7 @@ const gridColor = document.getElementById("grid-color");
 const nyanCat = document.getElementById("nyan-cat");
 const size = document.getElementById("size");
 const pixelSlider = document.getElementById("pixel-slider");
+const wallpaper = document.getElementById("wallpaper");
 
 // STEP 2: Initialise variables & execute onload functions
 let marker = markerModes.Pencil;
@@ -331,3 +353,6 @@ nyanCat.addEventListener("click", () => playAudio("nyan-mp3"));
 // STEP 8: Handle pixel slider functionality
 pixelSlider.addEventListener("input", generateBoard);
 pixelSlider.addEventListener("input", () => playAudio("slider-mp3"));
+
+// STEP 9: Wallpaper Toggle
+wallpaper.addEventListener("click", toggleDayNightMode);

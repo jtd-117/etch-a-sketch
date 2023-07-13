@@ -9,7 +9,6 @@
 
 /* Default Styles & Page Structure */
 
-html, 
 body {
     block-size: 100%;
     margin: 0;
@@ -27,6 +26,10 @@ main {
     align-items: center;
     flex-grow: 1;
     flex-shrink: 1;
+}
+
+.night-wallpaper {
+    background-image: url("images/night-wallpaper.jpeg");
 }
 
 /* -------------------------------------------------------------------------- */
@@ -70,7 +73,7 @@ footer h2 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #fcffdb;
+    background-color: beige;
 }
 
 #menu > * {
