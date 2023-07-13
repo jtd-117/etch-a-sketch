@@ -78,7 +78,7 @@ footer h2 {
 }
 
 input,
-#size,
+.menu-text,
 #grid-title {
     font-family: "vt323", sans-serif;
     font-size: x-large;
