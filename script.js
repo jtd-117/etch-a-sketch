@@ -44,7 +44,7 @@ function changeMarkerMode(e) {
 
     // STEP 1: Get the current marker mode & remove the 'active' classlist
     let markerMode = getMarkerTag(marker);
-    markerMode.classList.remove("active");
+    markerMode.classList.remove("marker");
     
     // CASE 2A: Pencil has been pressed
     if (e.target.getAttribute("id") === markerModes.Pencil) {
@@ -65,7 +65,7 @@ function changeMarkerMode(e) {
     }
     // STEP 3: Add the 'active' classlist
     markerMode = getMarkerTag(marker);
-    markerMode.classList.add("active");
+    markerMode.classList.add("marker");
 }
 /* -------------------------------------------------------------------------- */
 /**
@@ -150,11 +150,16 @@ function generateBoard() {
 function colorSelect(e) {
     
     // CASE A: Changing the maker's color
-    if (e.target.getAttribute("id") !== "grid-color") {
-        markerColor = e.target.value;
+    if (e.target.getAttribute("id") === "pencil-color" 
+        && marker === markerModes.Pencil) {
+        markerColor = pencilColor.value;
+
+    } else if (e.target.getAttribute("id") === "eraser-color" 
+        && marker === markerModes.Eraser) {
+        markerColor = eraserColor.value;
 
     // CASE B: Changing the grid's color
-    } else {
+    } else if (e.target.getAttribute("id") === "grid-color") {
         let cells = document.querySelectorAll(`div[class="cell"], 
             div[class="cell marked"]`);
         cells.forEach((cell) => {
@@ -288,6 +293,7 @@ const pixelSlider = document.getElementById("pixel-slider");
 
 // STEP 2: Initialise variables & execute onload functions
 let marker = markerModes.Pencil;
+pencil.classList.add("marker");
 let markerColor = pencilColor.value;
 board.style.cursor = `url("images/pencil-cursor.gif"), auto`;
 let gridStyle = gridStyles.None;
