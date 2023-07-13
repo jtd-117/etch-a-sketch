@@ -127,6 +127,11 @@ input,
     flex-direction: column;
 }
 
+.active {
+    color: white;
+    background-color: black;
+}
+
 /* -------------------------------------------------------------------------- */
 
 /* Footer & Acknowledgements */

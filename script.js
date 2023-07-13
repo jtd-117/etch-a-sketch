@@ -13,29 +13,59 @@ const markerModes = Object.freeze({
 });
 /* -------------------------------------------------------------------------- */
 /**
+ * @description Determines the value of the 'marker' variable & returns the 
+ *              associated tag.
+ * @param       {markerModes} marker The current 'markerModes' value
+ * @returns     {markerModes} One of 'pencil', 'eraser' or 'nyanCat' variables 
+ *              which represent queried input tags
+ */
+function getMarkerTag(marker) {
+
+    // CASE A: Mode is 'Pencil'
+    if (marker === markerModes.Pencil) {
+        return pencil;
+
+    // CASE B: Mode is 'Eraser'
+    } else if (marker === markerModes.Eraser) {
+        return eraser;
+
+    // CASE C: Mode is 'Nyan Cat'
+    } else {
+        return nyanCat;
+    }
+}
+/* -------------------------------------------------------------------------- */
+/**
  * @description     Changes the 'marker' value according to the button pressed.
  * @param {Event}   e The event triggered by the 'pencil', 'eraser' & 
  *                    'nyan-cat' button
  */
 function changeMarkerMode(e) {
+
+    // STEP 1: Get the current marker mode & remove the 'active' classlist
+    let markerMode = getMarkerTag(marker);
+    markerMode.classList.remove("active");
     
-    // CASE A: Pencil has been pressed
+    // CASE 2A: Pencil has been pressed
     if (e.target.getAttribute("id") === markerModes.Pencil) {
         marker = markerModes.Pencil;
         markerColor = pencilColor.value;
         board.style.cursor = `url("images/pencil-cursor.gif"), auto`;
 
-    // CASE B: Eraser has been pressed
+    // CASE 2B: Eraser has been pressed
     } else if (e.target.getAttribute("id") === markerModes.Eraser) {
         marker = markerModes.Eraser;
         markerColor = eraserColor.value;
         board.style.cursor = `url("images/eraser-cursor.gif"), auto`;
 
-    // CASE C: Nyan Cat has been pressed
+    // CASE 2C: Nyan Cat has been pressed
     } else {
         marker = markerModes.NyanCat;
         board.style.cursor = `url("images/nyan-cat-cursor.gif"), auto`;
     }
+    // STEP 3: Add the 'active' classlist
+    markerMode = getMarkerTag(marker);
+    markerMode.classList.add("active");
 }
 /* -------------------------------------------------------------------------- */
 /**
