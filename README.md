@@ -1,17 +1,15 @@
 # PIXEL SKETCHER
 
 ## Contents:
-1. [Live Preview](#live-preview)
+1. [Live Showcase](#live-showcase)
 1. [About](#about)
 2. [Features](#features)
 3. [Note](#note)
 
-## Live Preview:
-
-A live preview can be found by 👉 [clicking here](https://jtd-117.github.io/pixel-sketcher/) 👈.
+## Live Showcase:
+A live showcase can be found by 👉 [clicking here](https://jtd-117.github.io/pixel-sketcher/) 👈.
 
 ## About:
-
 'Pixel Sketcher' provides a blank canvas of pixels for users to draw on. Users can select a color to sketch with a single color or Nyan Cat (i.e. a random selection of colors), adjust the number of pixels on the canvas, & use the 'Eraser' to clear sections of their work.
 
 ![](images/demo.gif)
@@ -25,4 +23,4 @@ A live preview can be found by 👉 [clicking here](https://jtd-117.github.io/pi
 - Sound effects for button cues
 
 ## Note:
-This repository is based off [project 4 (Sketch-An-Etch)](https://www.theodinproject.com/lessons/foundations-etch-a-sketch) of the 'Foundations Course' offered by ['The Odin Project'](https://www.theodinproject.com/). Find it under the 'JavaScript Basics' section.
+This repository is based on [project 4 (Sketch-An-Etch)](https://www.theodinproject.com/lessons/foundations-etch-a-sketch) of the 'Foundations Course' offered by ['The Odin Project'](https://www.theodinproject.com/). Find it under the 'JavaScript Basics' section.
