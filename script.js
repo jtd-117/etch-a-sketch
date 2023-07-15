@@ -1,7 +1,8 @@
 /**
- * @file            Implements logic for 'Pixel Sketcher'.
- * @author          Jude Thaddeau Data
- * @link            https://github.com/jtd-117
+ * @file        script.js
+ * @description Implements logic for 'Pixel Sketcher'
+ * @author      Jude Thaddeau Data
+ * @link        GitHub: https://github.com/jtd-117
 * --------------------------------------------------------------------------- */
 /**
  * @description An ENUM for the different 'marker' modes.
