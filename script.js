@@ -290,11 +290,13 @@ function toggleDayNightMode() {
     if (document.body.classList.contains("night-wallpaper")) {
         wallpaper.value = "Night";
         menu.style.backgroundColor = "gray";
+        playAudio("night-mp3");
 
     // CASE 2B: Transitioned to 'Day' mode
     } else {
         wallpaper.value = "Day";
         menu.style.backgroundColor = "beige";
+        playAudio("morning-mp3");
     }
 }
 /* -------------------------------------------------------------------------- */
