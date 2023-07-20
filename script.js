@@ -23,17 +23,13 @@ const markerModes = Object.freeze({
 function getMarkerTag(marker) {
 
     // CASE A: Mode is 'Pencil'
-    if (marker === markerModes.Pencil) {
-        return pencil;
+    if (marker === markerModes.Pencil) return pencil;
 
     // CASE B: Mode is 'Eraser'
-    } else if (marker === markerModes.Eraser) {
-        return eraser;
+    else if (marker === markerModes.Eraser) return eraser;
 
     // CASE C: Mode is 'Nyan Cat'
-    } else {
-        return nyanCat;
-    }
+    else return nyanCat;
 }
 /* -------------------------------------------------------------------------- */
 /**
@@ -169,7 +165,6 @@ function colorSelect(e) {
     }
 }
 /* -------------------------------------------------------------------------- */
-
 /**
  * @description         Randomly generates a HEX value as a string.
  * @returns {string}    A random HEX value
@@ -177,7 +172,6 @@ function colorSelect(e) {
 function generateRandomHex() {
     return "#" + Math.floor(Math.random()*16777215).toString(16);
 }
-
 /* -------------------------------------------------------------------------- */
 /**
  * @description     Change's a cell by a given background color.
