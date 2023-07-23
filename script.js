@@ -3,7 +3,8 @@
  * @description Implements logic for 'Pixel Sketcher'
  * @author      Jude Thaddeau Data
  * @link        GitHub: https://github.com/jtd-117
-* --------------------------------------------------------------------------- */
+ */
+
 /**
  * @description An ENUM for the different 'marker' modes.
  */
@@ -12,7 +13,7 @@ const markerModes = Object.freeze({
     Eraser: "eraser",
     NyanCat: "nyan-cat"
 });
-/* -------------------------------------------------------------------------- */
+
 /**
  * @description Determines the value of the 'marker' variable & returns the 
  *              associated tag.
@@ -22,16 +23,11 @@ const markerModes = Object.freeze({
  */
 function getMarkerTag(marker) {
 
-    // CASE A: Mode is 'Pencil'
     if (marker === markerModes.Pencil) return pencil;
-
-    // CASE B: Mode is 'Eraser'
     else if (marker === markerModes.Eraser) return eraser;
-
-    // CASE C: Mode is 'Nyan Cat'
-    else return nyanCat;
+    return nyanCat;
 }
-/* -------------------------------------------------------------------------- */
+
 /**
  * @description     Changes the 'marker' value according to the button pressed.
  * @param {Event}   e The event triggered by the 'pencil', 'eraser' & 
@@ -64,7 +60,7 @@ function changeMarkerMode(e) {
     markerMode = getMarkerTag(marker);
     markerMode.classList.add("marker");
 }
-/* -------------------------------------------------------------------------- */
+
 /**
  * @description     (AUXILIARY) ADDS 'dimensions' x 'dimensions' cells to 
  *                  'board' div.
@@ -118,7 +114,7 @@ function addBoardCells(dimensions) {
         });
     }
 }
-/* -------------------------------------------------------------------------- */
+
 /**
  * @description Adds cells (i.e. pixels) to the 'board' div according to 
  *              the dimensions specified on the 'pixel-slider' input & 
@@ -138,7 +134,7 @@ function generateBoard() {
     // STEP 4: Display the board dimensions
     size.textContent = `Size: ${dimensions} x ${dimensions}`;
 }
-/* -------------------------------------------------------------------------- */
+
 /**
  * @description     Adjusts the color-based variables to match the selected 
  *                  input.
@@ -164,7 +160,7 @@ function colorSelect(e) {
         });
     }
 }
-/* -------------------------------------------------------------------------- */
+
 /**
  * @description         Randomly generates a HEX value as a string.
  * @returns {string}    A random HEX value
@@ -172,7 +168,7 @@ function colorSelect(e) {
 function generateRandomHex() {
     return "#" + Math.floor(Math.random()*16777215).toString(16);
 }
-/* -------------------------------------------------------------------------- */
+
 /**
  * @description     Change's a cell by a given background color.
  * @param {Event}   e The 'cell' div triggered by the event
@@ -195,7 +191,7 @@ function markCell(e) {
         e.target.style.backgroundColor = markerColor;
     }
 }
-/* -------------------------------------------------------------------------- */
+
 /**
  * @description Clears the entire board with the `eraserColor` value.
  */
@@ -211,7 +207,7 @@ function resetBoard() {
         cell.style.backgroundColor = eraserColor.value;
     });
 }
-/* -------------------------------------------------------------------------- */
+
 /**
  * @description An ENUM for the differ 'grid' modes.
  */
@@ -220,7 +216,7 @@ const gridStyles = Object.freeze({
     Solid: "Solid",
     Dotted: "Dotted"
 });
-/* -------------------------------------------------------------------------- */
+
 /**
  * @description     Changes the grid style whenever the 'grid' button 
  *                  is pressed.
@@ -257,7 +253,7 @@ function changeGridStyle(e) {
         });
     }
 }
-/* -------------------------------------------------------------------------- */
+
 /**
  * @description Plays the audio stored in the HTML tag with `id`.
  * @param       {string} id The HTML tag that contains the audio
@@ -271,7 +267,7 @@ function playAudio(id) {
     if (!audio) return;
     audio.play();
 }
-/* -------------------------------------------------------------------------- */
+
 /**
  * @description Handles Day/Night functionality.
  */
@@ -293,7 +289,6 @@ function toggleDayNightMode() {
         playAudio("morning-mp3");
     }
 }
-/* -------------------------------------------------------------------------- */
 
 // STEP 1: Initialise queried document tags
 const board = document.getElementById("board");

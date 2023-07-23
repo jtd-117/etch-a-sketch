@@ -5,8 +5,6 @@
     src: url("VT323/VT323-Regular.ttf");
 }
 
-/* -------------------------------------------------------------------------- */
-
 /* Default Styles & Page Structure */
 
 body {
@@ -32,8 +30,6 @@ main {
     background-image: url("images/night-wallpaper.jpeg");
 }
 
-/* -------------------------------------------------------------------------- */
-
 /* Header & Title */
 
 header {
@@ -49,8 +45,6 @@ footer h2 {
     border: 2px solid black;
 }
 
-/* -------------------------------------------------------------------------- */
-
 /* Sketch Board */
 
 #board {
@@ -60,8 +54,6 @@ footer h2 {
     display: grid;
     border: 3px solid black;
 }
-
-/* -------------------------------------------------------------------------- */
 
 /* Sketch Menu Options */
 
@@ -136,8 +128,6 @@ input,
     background-color: black;
 }
 
-/* -------------------------------------------------------------------------- */
-
 /* Footer & Acknowledgements */
 
 footer {
@@ -152,8 +142,6 @@ footer h2 a {
 footer h2 a:hover {
     text-decoration: underline;
 }
-
-/* -------------------------------------------------------------------------- */
 
 /* Media Queries For Responsive Design */
 
@@ -189,8 +177,6 @@ footer h2 a:hover {
     }
 }
 
-/* -------------------------------------------------------------------------- */
-
 /* 
     REFERENCE: 
     https://www.smashingmagazine.com/2021/12/create-custom-range-input-consistent-browsers/ 
@@ -209,8 +195,6 @@ input[type="range"] {
 input[type="range"]:focus {
     outline: none;
 }
-
-/* -------------------------------------------------------------------------- */
 
 /* Chrome, Safari, Opera and Edge Chromium styles */
 
@@ -234,8 +218,6 @@ input[type="range"]::-webkit-slider-thumb {
     border-radius: 0.5rem;
     outline: 2px solid black;
 }
-
-/* -------------------------------------------------------------------------- */
 
 /* Firefox styles */
 
