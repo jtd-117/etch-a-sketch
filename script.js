@@ -35,28 +35,23 @@ function getMarkerTag(marker) {
  */
 function changeMarkerMode(e) {
 
-    // STEP 1: Get the current marker mode & remove the 'active' classlist
     let markerMode = getMarkerTag(marker);
     markerMode.classList.remove("marker");
-    
-    // CASE 2A: Pencil has been pressed
+
     if (e.target.getAttribute("id") === markerModes.Pencil) {
         marker = markerModes.Pencil;
         markerColor = pencilColor.value;
         board.style.cursor = `url("images/pencil-cursor.gif"), auto`;
 
-    // CASE 2B: Eraser has been pressed
     } else if (e.target.getAttribute("id") === markerModes.Eraser) {
         marker = markerModes.Eraser;
         markerColor = eraserColor.value;
         board.style.cursor = `url("images/eraser-cursor.gif"), auto`;
 
-    // CASE 2C: Nyan Cat has been pressed
     } else {
         marker = markerModes.NyanCat;
         board.style.cursor = `url("images/nyan-cat-cursor.gif"), auto`;
     }
-    // STEP 3: Add the 'active' classlist
     markerMode = getMarkerTag(marker);
     markerMode.classList.add("marker");
 }
@@ -68,33 +63,20 @@ function changeMarkerMode(e) {
  */
 function addBoardCells(dimensions) {
 
-    // STEP 1: Adjust the grid's rows & columns
     board.style.gridTemplateRows = `repeat(${dimensions}, 1fr)`;
     board.style.gridTemplateColumns = `repeat(${dimensions}, 1fr)`;
 
-    // STEP 2: Keep adding cells according to dimensions
     let cell = null;
     for (let i = 0; i < dimensions * dimensions; i++) {
 
-        // STEP 3: Initialise the new cell
         cell = document.createElement('div');
-
-        // STEP 4: Add 'cell' class
         cell.classList.add("cell");
-
-        // STEP 5: Fill the cell with color
         cell.style.backgroundColor = eraserColor.value;
 
-        /**
-         * STEP 5: Add 'mousedown' & 'mouseover' event listeners to the cell
-         * NOTES:
-         *  - 'mouseover' event ONLY enables click & drag behaviour
-         *  - 'mousedown' event ONLY enables click behaviour
-         */
+        // - 'mouseover' event ONLY enables click & drag behaviour
+        // - 'mousedown' event ONLY enables click behaviour
         cell.addEventListener("mousedown", markCell);
         cell.addEventListener("mouseover", markCell);
-
-        // STEP 6: Add cell to 'board' DOM
         board.appendChild(cell);
     }
     // STEP 7: Add any grid effect if any
@@ -122,16 +104,9 @@ function addBoardCells(dimensions) {
  */
 function generateBoard() {
 
-    // STEP 1: Get the dimensions specified on 'pixelSlider'
     const dimensions = pixelSlider.value;
-
-    // STEP 2: Delete all child elements inside 'board'
     board.innerHTML = "";
-    
-    // STEP 3: Add cells to the board (i.e. dimensions x dimensions)
     addBoardCells(dimensions);
-
-    // STEP 4: Display the board dimensions
     size.textContent = `Size: ${dimensions} x ${dimensions}`;
 }
 
@@ -141,8 +116,7 @@ function generateBoard() {
  * @param {Event}   e The selected 'color' input
  */
 function colorSelect(e) {
-    
-    // CASE A: Changing the maker's color
+
     if (e.target.getAttribute("id") === "pencil-color" 
         && marker === markerModes.Pencil) {
         markerColor = pencilColor.value;
@@ -151,10 +125,8 @@ function colorSelect(e) {
         && marker === markerModes.Eraser) {
         markerColor = eraserColor.value;
 
-    // CASE B: Changing the grid's color
     } else if (e.target.getAttribute("id") === "grid-color") {
-        let cells = document.querySelectorAll(`div[class="cell"], 
-            div[class="cell marked"]`);
+        let cells = document.querySelectorAll(`.cell`);
         cells.forEach((cell) => {
             cell.style.borderColor = `${gridColor.value}`;
         });
@@ -197,11 +169,7 @@ function markCell(e) {
  */
 function resetBoard() {
 
-    // STEP 1: Get all cells that are BOTH 'marked' & untouched
-    let cells = document.querySelectorAll(`div[class="cell"], 
-        div[class="cell marked"]`);
-
-    // STEP 2: For each cell remove the 'marked' class & color
+    let cells = document.querySelectorAll(`.cell`);
     cells.forEach((cell) => {
         cell.classList.remove("marked");
         cell.style.backgroundColor = eraserColor.value;
@@ -224,11 +192,8 @@ const gridStyles = Object.freeze({
  */
 function changeGridStyle(e) {
 
-    // STEP 1: Get all cells
-    let cells = document.querySelectorAll(`div[class="cell"], 
-        div[class="cell marked"]`);
+    let cells = document.querySelectorAll(`.cell`);
 
-    // CASE 2A: 'None' transitions to 'Solid'
     if (e.target.value === gridStyles.None) {
         gridStyle = gridStyles.Solid;
         grid.value = `${gridStyles.Solid}`;
@@ -236,7 +201,6 @@ function changeGridStyle(e) {
             cell.style.border = `0.1px ${gridStyles.Solid} ${gridColor.value}`;
         });
 
-    // CASE 2B: 'Solid' transitions to 'Dotted'
     } else if (e.target.value === gridStyles.Solid) {
         gridStyle = gridStyles.Dotted;
         grid.value = `${gridStyles.Dotted}`;
@@ -244,7 +208,6 @@ function changeGridStyle(e) {
             cell.style.border = `0.1px ${gridStyles.Dotted} ${gridColor.value}`;
         });
 
-    // CASE 2C: 'Dotted' transitions to 'None'
     } else {
         gridStyle = gridStyles.None;
         grid.value = `${gridStyles.None}`;
@@ -259,11 +222,7 @@ function changeGridStyle(e) {
  * @param       {string} id The HTML tag that contains the audio
  */
 function playAudio(id) {
-
-    // STEP 1: Locate the audio in the DOM
     const audio = document.getElementById(id);
-
-    // STEP 2: Execute the media if it exists
     if (!audio) return;
     audio.play();
 }
@@ -273,16 +232,13 @@ function playAudio(id) {
  */
 function toggleDayNightMode() {
 
-    // STEP 1: Change the day/night wallpapers
     document.body.classList.toggle("night-wallpaper");
 
-    // CASE 2A: Transitioned to 'Night' mode
     if (document.body.classList.contains("night-wallpaper")) {
         wallpaper.value = "Night";
         menu.style.backgroundColor = "gray";
         playAudio("night-mp3");
 
-    // CASE 2B: Transitioned to 'Day' mode
     } else {
         wallpaper.value = "Day";
         menu.style.backgroundColor = "beige";
